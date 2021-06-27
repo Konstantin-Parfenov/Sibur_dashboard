@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="card card-stats">
+            <div class="card-header card-header-warning card-header-icon">
+              <div class="card-icon">
+                <i class="material-icons">content_copy</i>
+              </div>
+              <p class="card-category">Точность модели</p>
+              <h3 class="card-title">95
+                <small>%</small>
+              </h3>
+            </div>
+            <div class="card-footer">
+              <div class="stats">
+                <i class="material-icons text-danger">warning</i>
+                <a href="#pablo">Есть возможности для улучшения</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card card-chart">
+            <div class="card-header card-header-success">
+              <div class="ct-chart" id="dailySalesChart"></div>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title" href = {{url_for('forecast.forecast_chart', avg_type_main = 'EMA')}}>Цена на ПЭТФ</h4>
+              <a href = {{url_for('forecast.forecast_chart', avg_type_main = 'EMA')}}>Детализация</a>
+              <p class="card-category">
+                <span class="text-danger"><i class="fa fa-long-arrow-down"></i> -5% </span> по сравнению с прошлым месяцем</p>
+            </div>
+            <div class="card-footer">
+              <div class="stats">
+                <i class="material-icons">access_time</i> обновлено 24.11.2019
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-chart">
+            <div class="card-header card-header-warning">
+              <div class="ct-chart" id="websiteViewsChart"></div>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title" href = {{url_for('forecast.forecast_pie')}}>Влияние параметров модели</h4>
+              <a href = {{url_for('forecast.forecast_pie')}}>Детализация</a>
+              <p class="card-category">Процент</p>
+            </div>
+            <div class="card-footer">
+              <div class="stats">
+                <i class="material-icons">access_time</i> обновлено 24.11.2019
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-chart">
+            <div class="card-header card-header-success">
+              <div class="ct-chart" id="completedTasksChart"></div>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Затраты на поддержание модели</h4>
+              <p class="card-category">тыс. руб в квартал.</p>
+            </div>
+            <div class="card-footer">
+              <div class="stats">
+                <i class="material-icons">access_time</i> обновлено 24.11.2019
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+        <div class="col-lg-6 col-md-12">
+          <div class="card">
+            <div class="card-header card-header-warning">
+              <h4 class="card-title">Динамика изменения цены ПЭТФ</h4>
+              <p class="card-category"></p>
+            </div>
+            <div class="card-body table-responsive">
+              <table class="table table-hover">
+                <thead class="text-warning">
+                  <th>Дата</th>
+                  <th>Цена</th>
+                  <th>Изменение</th>
+                  <th>Тренд 12 мес.</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Март 2019</td>
+                    <td>1319.52</td>
+                    <td>16.5 %</td>
+                    <td>Положительный</td>
+                  </tr>
+                  <tr>
+                    <td>Апрель 2019</td>
+                    <td>1282.90</td>
+                    <td>-2.8 %</td>
+                    <td>Положительный</td>
+                  </tr>
+                  <tr>
+                    <td>Май 2019</td>
+                    <td>1261.53</td>
+                    <td>-1.7 %</td>
+                    <td>Положительный</td>
+                  </tr>
+                  <tr>
+                    <td>Июнь 2019</td>
+                    <td>1237.61</td>
+                    <td>-1.9 %</td>
+                    <td>Положительный</td>
+                  </tr>
+                  <tr>
+                    <td>Июль 2019</td>
+                    <td>1173.73</td>
+                    <td>-5.2 %</td>
+                    <td>Положительный</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="container-fluid">
+      <div class="copyright float-right">
+          Sibur Challenge, 2019  Команда 1
+      </div>
+    </div>
+  </footer>
+</div>
+</div>
+
+{% endblock %}

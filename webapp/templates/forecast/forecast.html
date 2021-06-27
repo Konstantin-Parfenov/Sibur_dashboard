@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="content">
+    <h2>Детальный график прогноза</h1>
+    <div>
+    <a href = {{url_for('forecast.forecast_chart', avg_type_main = 'EMA')}}>EMA</a>
+    <a href = {{url_for('forecast.forecast_chart', avg_type_main = 'SMA')}}>SMA</a>
+        
+    
+
+    <div class="chart" id="forecast_graph">
+        <script>
+            var graphs = {{plot_forecast_chart | safe}};
+            Plotly.plot('forecast_graph',graphs,{});
+        </script>
+    </div>
+    </div>
+</div>    
+{% endblock %}

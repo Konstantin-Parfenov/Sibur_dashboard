@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="content">
+    <h2>Детальный график влияния различных данных в моделе</h1>
+    <div class="chart" id="piegraph">
+        <script>
+            var graphs = {{plot_pie_chart_weights | safe}};
+            Plotly.plot('piegraph',graphs,{});
+        </script>
+    </div>
+</div>
+{% endblock %}
